@@ -4,6 +4,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { join } from 'path';
 import { AppModule } from './app.module';
+import { configurationService } from './config/config.service';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -14,7 +15,7 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Real time chat backend')
-    .setDescription('RTC app built with nestjs and typeorm')
+    .setDescription('RTC app built with NestJS and TypeORM')
     .setVersion('1.0')
     .addBearerAuth()
     .build();
@@ -24,6 +25,10 @@ async function bootstrap() {
 
   app.enableCors();
 
-  await app.listen(3000);
+  await app.listen(configurationService.getValue('APP_PORT'), () =>
+    console.log(
+      `Listening on => localhost:${configurationService.getValue('APP_PORT')}`,
+    ),
+  );
 }
 bootstrap();

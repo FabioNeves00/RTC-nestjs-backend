@@ -41,7 +41,6 @@ export class ConfigurationService {
       username: this.getValue('POSTGRES_USER'),
       password: this.getValue('POSTGRES_PASSWORD'),
       database: this.getValue('POSTGRES_DATABASE'),
-      schema: this.getValue('POSTGRES_SCHEMA'),
       migrationsTableName: 'migrations',
       autoLoadEntities: true,
       migrations: [
