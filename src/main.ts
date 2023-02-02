@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { join } from 'path';
+
 import { AppModule } from './app.module';
 import { configurationService } from './config/config.service';
 
@@ -25,10 +26,10 @@ async function bootstrap() {
 
   app.enableCors();
 
-  await app.listen(configurationService.getValue('APP_PORT'), () =>
-    console.log(
-      `Listening on => localhost:${configurationService.getValue('APP_PORT')}`,
-    ),
+  const PORT = configurationService.getValue('APP_PORT') || 5000;
+
+  await app.listen(PORT, () =>
+    console.log(`Listening on => localhost:${PORT}`),
   );
 }
 bootstrap();
