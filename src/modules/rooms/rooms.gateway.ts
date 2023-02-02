@@ -20,8 +20,13 @@ export class RoomsGateway {
     return this.roomsService.findAll();
   }
 
-  @SubscribeMessage('findOneRoom')
-  findOne(@MessageBody() id: number) {
-    return this.roomsService.findOne(id);
+  @SubscribeMessage('joinRoom')
+  join(@MessageBody() roomCode: string) {
+    return this.roomsService.join(roomCode);
+  }
+
+  @SubscribeMessage('disconnectRoom')
+  disconnect(@MessageBody() roomCode: string) {
+    return this.roomsService.disconnect(roomCode);
   }
 }

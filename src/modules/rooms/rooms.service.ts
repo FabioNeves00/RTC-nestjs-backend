@@ -11,11 +11,11 @@ export class RoomsService {
     return `This action returns all rooms`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} room`;
+  join(roomCode: string) {
+    return `This action returns a #${roomCode} room`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} room`;
+  disconnect(roomCode: string) {
+    return `This action removes a #${roomCode} room`;
   }
 }
