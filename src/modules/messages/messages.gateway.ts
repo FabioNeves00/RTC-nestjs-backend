@@ -3,8 +3,8 @@ import {
   SubscribeMessage,
   MessageBody,
 } from '@nestjs/websockets';
-import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
+import { MessagesService } from './messages.service';
 
 @WebSocketGateway()
 export class MessagesGateway {

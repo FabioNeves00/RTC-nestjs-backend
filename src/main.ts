@@ -29,7 +29,7 @@ async function bootstrap() {
   const PORT = configurationService.getValue('APP_PORT') || 5000;
 
   await app.listen(PORT, () =>
-    console.log(`Listening on => localhost:${PORT}`),
+    console.log(`Listening on => localhost:${PORT}`)
   );
 }
 bootstrap();
