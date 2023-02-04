@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  Entity,
   ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
@@ -11,6 +12,7 @@ import { User } from '../../users/entities/user.entity';
 import { IRoom } from '../../rooms/types';
 import { IUser } from '../../users/types';
 
+@Entity({ name: 'messages' })
 export class Message implements IMessage {
   @PrimaryGeneratedColumn('uuid')
   id: string;

@@ -47,6 +47,7 @@ export class ConfigurationService {
         join(rootDir, 'migration/*{.ts,.js}'),
         join(rootDir, 'src/migration/*{.ts,.js}'),
       ],
+      entities: [join(__dirname, '..', '**', '*.entity.{ts,js}')],
       synchronize: true,
     };
   }

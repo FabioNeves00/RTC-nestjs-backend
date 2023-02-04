@@ -21,6 +21,9 @@
       "@app/config": ["./src/config"],
       "@app/modules": ["./src/modules"],
       "@app/views": ["./src/views"],
+      "@app/util": ["./src/util"],
+      "@app/decorators": ["./src/common/decorators"],
+      "@app/validators": ["./src/common/validators"],
     }
   }
 }
